@@ -1,0 +1,115 @@
+:root {
+  --fundo: #ffffff;
+  --texto: #171717;
+  --secundario: #5b5b5b;
+  --destaque: #1f4f8a;
+  --erro: #b42318;
+  --borda: #d0d5dd;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --fundo: #0a0a0a;
+    --texto: #ededed;
+    --secundario: #a1a1a1;
+    --destaque: #6ea8fe;
+    --erro: #f97066;
+    --borda: #344054;
+  }
+}
+
+:root[data-theme="dark"] {
+  --fundo: #0a0a0a;
+  --texto: #ededed;
+  --secundario: #a1a1a1;
+  --destaque: #6ea8fe;
+  --erro: #f97066;
+  --borda: #344054;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--texto);
+  background: var(--fundo);
+  font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  line-height: 1.5;
+}
+
+.pagina {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+
+.pagina h1 {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.pagina p {
+  color: var(--secundario);
+}
+
+.centralizada {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.formulario {
+  width: 100%;
+  max-width: 360px;
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: left;
+}
+
+.formulario label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.formulario input {
+  font: inherit;
+  font-weight: 400;
+  padding: 10px 12px;
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  background: var(--fundo);
+  color: var(--texto);
+}
+
+.formulario button {
+  font: inherit;
+  font-weight: 600;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 8px;
+  background: var(--destaque);
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.formulario button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.erro {
+  color: var(--erro);
+  font-size: 14px;
+}
